@@ -20,8 +20,8 @@ from obspy.signal import PPSD
 
 
 # DATE RANGE TO DOWNLOAD AND ANALYSE DATA FROM
-start = UTCDateTime("2024-02-08")
-end = UTCDateTime("2024-04-15")
+start = UTCDateTime("2024-04-16")
+end = UTCDateTime("2024-05-15")
 
 datelist = pd.date_range(start.datetime, min(end, UTCDateTime()).datetime, freq="D")
 DOWNLOAD=True #set to True to download data (or False)

@@ -34,8 +34,8 @@ from obspy.signal import PPSD
 
 #DATE RANGE TO DOWNLOAD AND ANALYSE DATA FROM
 #set as "yyyy-mm-dd" based on operating times - will download one .mseed file per day - may be large data set if you do a long time period!
-start = UTCDateTime("2024-03-15")
-end = UTCDateTime("2024-04-15")
+start = UTCDateTime("2024-05-25")
+end = UTCDateTime("2024-06-10")
 
 
 datelist = pd.date_range(start.datetime, min(end, UTCDateTime()).datetime, freq="D")
@@ -43,7 +43,7 @@ DOWNLOAD=True #set to True to download data (or False)
 #Create list of stations to download ( in format: network, station, provider)
 #data_provider can be:"http://eida.bgs.ac.uk" /"IRIS"/"ORFEUS"/"RASPISHAKE"/'http://fdsnws.raspberryshakedata.org' etc. *****NOTE RAPISHAKE CURRENTLY NOT WORKING - SERVER DOWN*******
 Stats2download=[]
-Stats2download.append(['AM','R50D6','https://data.raspberryshake.org']) #2
+Stats2download.append(['AM','R50D6','http://fdsnws.raspberryshakedata.org']) #2
 
 
 #loop through each station in list

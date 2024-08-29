@@ -5,8 +5,8 @@ from obspy.core.inventory import read_inventory
 
 
 #Select a trace with the desired station/channel combination:here i have downloaded the file, pls change to the add of your files
-file_path = r"C:\Users\84278\Desktop\codefile\C++\AM.R50D6\2024-02-08_AM.R50D6..Z.mseed"
-resp_path = r"C:\Users\84278\Desktop\codefile\C++\AM.R50D6\2024-02-08_AM.R50D6..Z_response.xml"
+file_path = r"C:\Users\84278\Desktop\codefile\C++\AM.R50D6\2024-03-24_AM.R50D6..Z.mseed"
+resp_path = r"C:\Users\84278\Desktop\codefile\C++\AM.R50D6\2024-03-24_AM.R50D6..Z_response.xml"
 
 st = read(file_path)
 for tr in st:
@@ -31,7 +31,7 @@ ppsd.add(st)
 print("number of psd segments:", len(ppsd.times_processed))
 
 #This method to add additional information from other files
-file_path = r"C:\Users\84278\Desktop\codefile\C++\AM.R50D6\2024-02-09_AM.R50D6..Z.mseed"
+file_path = r"C:\Users\84278\Desktop\codefile\C++\AM.R50D6\2024-03-24_AM.R50D6..Z.mseed"
 st = read(file_path)
 ppsd.add(st)
 
@@ -54,10 +54,3 @@ ppsd.plot_temporal([0.1, 1, 10])
 
 #Spectrogram-like plots can also be done
 ppsd.plot_spectrogram()
-
-#Plotting Spectrograms
-st.merge(method=1)
-for tr in st:
-    if not ppsd.add(tr):
-        print(f"Skipping overlapping data at {tr.stats.starttime}")
-st.spectrogram(log=True, title=f'AM.R50D6 {str(st[0].stats.starttime)}')
