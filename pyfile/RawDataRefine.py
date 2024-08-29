@@ -33,7 +33,7 @@ def clean_mseed_data_by_threshold(input_file):
 
 def process_all_files(folder_path):
     start_date = datetime(2024, 2, 8)
-    end_date = datetime(2024, 5, 15)
+    end_date = datetime(2024, 5, 18)
     current_date = start_date
     file_paths = []
 
